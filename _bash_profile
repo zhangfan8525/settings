@@ -1,0 +1,49 @@
+export PS1="\[\e[36m\]*\[\e[m\]\[\e[31m\]\u\[\e[m\]\[\e[36m\]*\[\e[m\][\[\e[36m\]\w\[\e[m\]][\[\e[32m\]\A\[\e[m\]]\[\e[33m\]\\$\[\e[m\] "
+
+export TERM=xterm-256color
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+export HISTCONTROL=ignoredups
+
+alias ll="ls -laF"
+alias l="ls -F"
+alias ..='cd ..'
+alias b2d="boot2docker"
+alias vi="vim"
+alias archey="archey -c"
+alias cgrep="grep -rni --include \*.cpp --include \*.h --include \*.c --include \*.hpp"
+alias gotagz='gotags -tag-relative=true -R=true -sort=true -f="tags" -fields=+l .'
+alias mongod='mongod --dbpath ~/db'
+
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+export GOPATH=$HOME/golang
+
+# Setting PATH for Python 3.4
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
+export PATH
+
+export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
+
+$(boot2docker shellinit 2> /dev/null)
+
+# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
+export COCOS_CONSOLE_ROOT=/Users/masamune/cocos2d-x-3.6/tools/cocos2d-console/bin
+export PATH=$COCOS_CONSOLE_ROOT:$PATH
+
+# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
+export COCOS_TEMPLATES_ROOT=/Users/masamune/cocos2d-x-3.6/templates
+export PATH=$COCOS_TEMPLATES_ROOT:$PATH
+
+export PATH=$GOPATH/bin:$PATH
+
+set -o vi
+eval "$(thefuck-alias)"
+
+export PATH=$HOME/Library/Android/android-sdk-macosx/platform-tools:$PATH
+export PATH=$HOME/Library/Android/android-sdk-macosx/tools:$PATH
